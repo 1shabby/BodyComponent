@@ -1,0 +1,32 @@
+@import '@servicenow/sass-kit/host';
+
+now-textarea{
+    width : 500px
+}
+
+now-accordion-item{
+    width : 500px
+}
+
+.image_card{
+    width : 540px;
+}
+
+now-button{
+    padding : 15px
+}
+
+.Arm{
+    display: block;
+}
+
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.float-child {
+    width: 35%;
+    float: left;
+    padding: 20px;
+}  
