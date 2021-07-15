@@ -1,0 +1,165 @@
+@import '@servicenow/sass-kit/host';
+
+#front {
+    float: left;
+    margin-top: 1%;
+    position: relative;
+    width: 16.2%;
+    height: 24.2%;
+    border: 2px solid black;
+    //box-shadow: 10px 10px 5px grey;
+    margin: 10px;
+}
+
+area{
+    background-color: blue;
+}
+
+// #head {
+//     position:fixed;
+//     top:4%;
+//     left:9.2%;
+// }
+
+// #neck{
+//     position:fixed;
+//     top: 12.3%;
+//     left: 9.2%;
+// }
+
+// #chest{
+//     position:fixed;
+//     top: 18%;
+//     left: 9.2%;
+// }
+
+// #waist{
+//     position:fixed;
+//     top: 27.3%;
+//     left: 9.2%;
+// }
+
+// #left_arm{
+//     position:fixed;
+//     top:24.5%;
+//     left:5.3%;
+// }
+
+// #right_arm{
+//     position:fixed;
+//     top:24.5%;
+//     left:13.2%;
+// }
+
+// #left_hand{
+//     position:fixed;
+//     top:34.8%;
+//     left:3.8%;
+    
+// }
+
+// #right_hand{
+//     position:fixed;
+//     top:34.8%;
+//     left:14.6%;
+    
+// }
+
+// #left_thigh{
+//     position:fixed;
+//     top:38%;
+//     left:6.8%;
+// }
+
+// #right_thigh{
+//     position:fixed;
+//     top:38%;
+//     left:10.5%;
+// }
+
+// #left_knee{
+//     position:fixed;
+//     bottom:52.7%;
+//     left:6.5%;
+// }
+
+// #right_knee{
+//     position:fixed;
+//     bottom:52.7%;
+//     left:10.6%;
+// }
+
+// #left_leg{
+//     position:fixed;
+//     bottom: 46%;
+//     left:6.2%;
+// }
+
+// #right_leg{
+//     position:fixed;
+//     bottom: 46%;
+//     left: 11.0%;
+// }
+
+// #left_foot{
+//     position: fixed;
+//     bottom: 35%;
+//     left: 6.3%;
+// }
+
+// #right_foot{
+//     position: fixed;
+//     bottom: 35%;
+//     left: 10.8%;
+// }
+
+now-input{
+    margin:10px;
+}
+
+now-select{
+    margin: 10px;
+}
+
+now-textarea{
+    margin: 10px;
+    margin-right: 250px;
+}
+
+now-checkbox{
+    margin: 10px;
+}
+
+#header{
+    margin: 10px 10px 10px 13px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+}
+
+#sub_header{
+    margin: 10px 10px 10px 13px;
+    font-size: 1rem;
+    color: RGBA(var(--now-color--neutral-7,135,147,148));
+}
+
+#submit{
+    margin: 10px;
+    float: right;
+}
+now-textarea{
+    margin-top: 10px;
+    width: 90%;
+
+}
+
+article{
+    float: left;
+    margin-top: 1%;
+    margin-left: 1%;
+    width:35%;
+    height:47%;
+    border: 1px  solid black;
+    box-shadow: 10px 10px 5px grey;
+    padding: 8px;
+}
