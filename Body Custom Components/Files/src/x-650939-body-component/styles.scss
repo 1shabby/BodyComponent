@@ -10,6 +10,7 @@ now-accordion-item{
 
 .image_card{
     width : 540px;
+    border-width : 0px;
 }
 
 now-button{
@@ -26,7 +27,11 @@ now-button{
 }
 
 .float-child {
-    width: 35%;
+    width: 32%;
     float: left;
     padding: 20px;
 }  
+
+.vertical{
+    left: 0%;
+}
