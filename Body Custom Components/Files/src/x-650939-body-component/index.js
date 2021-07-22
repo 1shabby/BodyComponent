@@ -42,7 +42,7 @@ const view = (state, {updateState}) => {
 							on-click={ 
 								e => updateState({
 									head_section : "false",
-									neck_section : "true",
+									neck_section : !state.neck_section,
 									arm_section : "false",
 									shoulder_section : "false",
 									leg_section : "false",
@@ -57,7 +57,7 @@ const view = (state, {updateState}) => {
 									head_section : "false",
 									neck_section : "false",
 									arm_section : "false",
-									shoulder_section : "true",
+									shoulder_section : !state.shoulder_section,
 									leg_section : "false",
 									torso_section :"false",
 									other_section : "false"
@@ -69,7 +69,7 @@ const view = (state, {updateState}) => {
 									head_section : "false",
 									neck_section : "false",
 									arm_section : "false",
-									shoulder_section : "true",
+									shoulder_section : !state.shoulder_section,
 									leg_section : "false",
 									torso_section :"false",
 									other_section : "false"
@@ -401,14 +401,15 @@ const view = (state, {updateState}) => {
 							label="Weapon Type" 
 							placeholder="" 
 							type="text" 
-							value="Test">
+							value={state.arm_weapon}>
 						</now-input>
 						<now-textarea 
 							slot="content" 
 							label="Description of injury" 
 							maxlength={1000}  
 							showCounter="true" 
-							rows="7">
+							rows="7"
+							value={state.arm_description}>
 						</now-textarea>
 					</now-accordion-item>
 					<now-accordion-item 
@@ -430,14 +431,15 @@ const view = (state, {updateState}) => {
 							messages={[]} 
 							placeholder="" 
 							type="text" 
-							value="">
+							value={state.leg_weapon}>
 						</now-input>
 						<now-textarea 
 							slot="content" 
 							label="Description of injury" 
 							maxlength={1000}  
 							showCounter="true" 
-							rows="7" >
+							rows="7" 
+							value={state.leg_description}>
 							</now-textarea>
 					</now-accordion-item>
 					<now-accordion-item 
@@ -472,14 +474,15 @@ const view = (state, {updateState}) => {
 							messages={[]} 
 							placeholder="" 
 							type="text" 
-							value="">
+							value={state.torso_weapon}>
 						</now-input>
 						<now-textarea 
 							slot="content" 
 							label="Description of injury" 
 							maxlength={1500}  
 							showCounter="true" 
-							rows="7" >
+							rows="7" 
+							value={state.torso_description}>
 							</now-textarea>
 					</now-accordion-item>
 					<now-accordion-item 
@@ -518,14 +521,15 @@ const view = (state, {updateState}) => {
 							messages={[]} 
 							placeholder="" 
 							type="text" 
-							value="">
+							value={state.shoulder_weapon}>
 						</now-input>
 						<now-textarea 
 							slot="content" 
 							label="Description of injury" 
 							maxlength={1000}  
 							showCounter="true"
-							rows="7" >
+							rows="7" 
+							value={state.shoulder_description}>
 						</now-textarea>
 					</now-accordion-item>
 					<now-accordion-item 
@@ -539,14 +543,15 @@ const view = (state, {updateState}) => {
 							messages={[]} 
 							placeholder="" 
 							type="text" 
-							value="">
+							value={state.head_weapon}>
 						</now-input>
 						<now-textarea 
 							slot="content" 
 							label="Description of injury" 
 							maxlength={1000}  
 							showCounter="true" 
-							rows="7" >
+							rows="7" 
+							value={state.head_description}>
 						</now-textarea>
 					</now-accordion-item>
 					<now-accordion-item 
@@ -581,14 +586,15 @@ const view = (state, {updateState}) => {
 							messages={[]} 
 							placeholder="" 
 							type="text" 
-							value="">
+							value={state.other_weapon}>
 						</now-input>
 						<now-textarea 
 							slot="content" 
 							label="Description of injury" 
 							maxlength={2000}  
 							showCounter="true" 
-							rows="7" >
+							rows="7" 
+							value={state.other_description}>
 						</now-textarea>
 					</now-accordion-item>
 				</now-accordion>
@@ -644,7 +650,7 @@ createCustomElement('x-650939-body-component', {
 	view,
 	styles,
 	initialState: {
-		arm_weapon : "",
+		arm_weapon : "test",
 		leg_weapon : "",
 		torso_weapon : "",
 		head_weapon : "",
