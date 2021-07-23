@@ -15,9 +15,11 @@
 	},
 	"module": "src/index.js",
 	"dependencies": {
+		"@servicenow/cli": "^19.0.0",
 		"@servicenow/cli-archetype": "19.0.0",
 		"@servicenow/cli-component-archetype": "19.0.0",
 		"@servicenow/library-translate": "quebec",
+		"@servicenow/now-accordion": "^19.8.2-ecd",
 		"@servicenow/now-button": "^19.8.2-ecd",
 		"@servicenow/now-checkbox": "^19.8.2-ecd",
 		"@servicenow/now-dropdown": "^19.8.2-ecd",
