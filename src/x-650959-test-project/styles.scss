@@ -1,87 +1,87 @@
 @import '@servicenow/sass-kit/host';
+#front_img{
+    position:relative;
+}
 
 #front {
     float: left;
-    position: relative;
     border: 2px solid black;
     margin-right: 10px;
     margin-left: 0px;
 }
 
-h1{
-    color: white;
-    background-color: #20856d;
-    font-size: 38px;
-    font-family: 'Signika', sans-serif;
-    padding-bottom: 10px;
-    margin-bottom: 1%;
-    width: 35%;
-    text-align: center;
-    padding: 1px;
-    border: 1px solid black;
+#back_button{
+    position:absolute;
+    margin-top: 10px;
+    left: 210px;
+    cursor:pointer;
 }
 
-//Not working well in Safari.
-#front_image:hover{
+#openbtn{
+    position:absolute;
+    margin-top: 33px;
+    left:210px;
+    cursor:pointer;
+}
+
+//Not working in Safari.
+area{
     cursor: pointer;
 }
 
-now-input{
-    margin:20px;
-    margin-left: 10px;
-    width: 40%;
-}
-
-now-textarea{
-    margin: 20px;
-    margin-left: 10px;
-    margin-right: 250px;
-}
-
-now-checkbox{
-    margin: 10px;
-}
-
-#header{
-    margin: 10px 10px 10px 13px;
-    font-weight: 700;
-    font-size: 1.5rem;
-    
-}
-
-#sub_header{
-    margin: 10px 10px 10px 13px;
-    font-size: 1rem;
-    color: RGBA(var(--now-color--neutral-7,135,147,148));
-}
-
-#submit{
-    margin: 10px;
-    float: right;
-}
-
-#attach_image{
-    margin: 20px;
-    margin-left: px;
-}
-
-now-textarea{
-    margin-top: 10px;
-    width: 90%;
-    height: auto;
-}
-
-input{ 
-    margin: 20px;
-    margin-left: 10px;
-}
-
-article{
-    float: left;
-    margin-left: 1%;
-    width:35%;
-    height:47%;
-    border: 1px  solid black;
-    box-shadow: 10px 10px 5px grey;
+#body_parts{
+    display: none;
+    position: absolute;
+    width: 83px;
     padding: 8px;
+    left: 5px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;  
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    text-align:center;
+}
+area:hover + #body_parts{
+    display: block;
+}
+
+#mySidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5;
+}
+
+#mySidebar a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#mySidebar #closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#openbtn{
+    cursor: pointer;
+}
+
+#question{
+    transition: margin-left .5s;
+    padding: 20px;
 }

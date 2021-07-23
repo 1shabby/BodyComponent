@@ -15,7 +15,7 @@ const view = (state,{
 	updateState
 }) => {
 	return (
-		<article>
+		<aside>
 			<div id="header">
 				<span>Details</span>
 			</div>
@@ -24,7 +24,7 @@ const view = (state,{
 			</div>
 			<form>
 				<div id="Injuries">
-					<now-input id="injure" value={state.properties.injuries} placeholder="Click parts on the image" label="Body parts injured" disabled required />
+					<now-input id="injure" value={state.properties.injuries} placeholder="Click parts on the image" label="Body parts injured" disabled={true} required />
 					<now-input label="Extent of Injuries" required />
 				</div>
 				<div id="attack">
@@ -43,7 +43,7 @@ const view = (state,{
 					<now-button id="submit" label="Submit" variant="primary" size="md" icon="" tooltip-content=""/>
 				</div>
 			</form>
-		</article>
+		</aside>
 	);
 };
 
