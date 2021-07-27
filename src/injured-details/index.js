@@ -27,9 +27,21 @@ const view = (state,{
 			<now-accordion heading-level="3" trigger-icon={{"type":"plus-minus","position":"start"}}>
 				<now-accordion-item 
 					header={{"label":"Head","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={false}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.head_section}>	
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
+					</div>
+					<div id="eyesCheckBox" slot="content">
+						<now-checkbox label="Eyes"></now-checkbox>
+					</div>
+					<div id="earsCheckBox" slot="content">
+						<now-checkbox label="Ears"></now-checkbox>
+					</div>
+					<div id="noseCheckBox" slot="content">
+						<now-checkbox label="Nose"></now-checkbox>
+					</div>
+					<div id="mouthCheckBox" slot="content">
+						<now-checkbox label="Mouth"></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" />
@@ -37,7 +49,7 @@ const view = (state,{
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
 					</div>	
-					<div id="checkBox" slot="content">
+					<div id="headOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
 					</div>		
 				</now-accordion-item>
@@ -53,7 +65,7 @@ const view = (state,{
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
 					</div>	
-					<div id="checkBox" slot="content">
+					<div id="neckOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
 					</div>		
 				</now-accordion-item>
@@ -69,7 +81,7 @@ const view = (state,{
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
 					</div>
-					<div id="checkBox" slot="content">
+					<div id="torsoOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
 					</div>
 				</now-accordion-item>
@@ -79,13 +91,19 @@ const view = (state,{
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
+					<div id="checkBox" slot="content">
+						<now-checkbox label="Left Hand"></now-checkbox>
+					</div>
+					<div id="checkBox" slot="content">
+						<now-checkbox label="Right Hand"></now-checkbox>
+					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
 					</div>	
-					<div id="checkBox" slot="content">
+					<div id="armOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
 					</div>		
 				</now-accordion-item>
@@ -95,15 +113,27 @@ const view = (state,{
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
+					<div id="lkneeCheckBox" slot="content">
+						<now-checkbox label="Left Knee"></now-checkbox>
+					</div>
+					<div id="rkneeCheckBox" slot="content">
+						<now-checkbox label="Right Knee"></now-checkbox>
+					</div>
+					<div id="lfootCheckBox" slot="content">
+						<now-checkbox label="Left Foot"></now-checkbox>
+					</div>
+					<div id="rfootCheckBox" slot="content">
+						<now-checkbox label="Right Foot"></now-checkbox>
+					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
 					</div>	
-					<div id="checkBox" slot="content">
+					<div id="legOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
-					</div>		
+					</div>
 				</now-accordion-item>
 				</now-accordion>
 				<div id="Injuries">
@@ -120,7 +150,9 @@ const view = (state,{
 
 createCustomElement('injured-details', {
 	renderer: {type: snabbdom},
-	initialState: {},
+	initialState: {
+		head_section : "false"
+	},
 	properties: {
 		injuries: {
 			default: []

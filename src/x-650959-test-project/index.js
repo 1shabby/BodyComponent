@@ -43,7 +43,8 @@ const view = (state,{
 								alt="Head" 
 								coords="102,74,107,78,113,84,120,85,127,79,134,75,137,68,139,61,145,60,147,51,145,44,145,34,144,25,140,17,133,9,123,7,114,5,105,8,98,14,95,23,93,31,93,40,93,46,90,53,92,60,98,61,100,68"
 								shape="poly"
-								on-click={e => clickField(e)}/>
+								on-click={e => clickField(e),
+												state.head_section = !state.head_section}/>
 								<p id="body_parts">Head</p>
 							<area
 								alt="Neck" 
@@ -216,7 +217,7 @@ const view = (state,{
 							variant="tertiary"
 							size="sm"
 							config-aria={{"button":{"aria-label":"Settings"}}}
-							tooltip-content="Back"
+							tooltip-content="Rotate"
 							on-click= {
 								e => updateState({
 									image_type: (state.image_back == true) ? "https://i.ibb.co/FmffxXd/Body-Front.png" : "https://i.ibb.co/T42LWdj/Body-Back.png",
@@ -233,6 +234,14 @@ const view = (state,{
 							size="sm" 
 							config-aria={{"button":{"aria-label":"Settings"}}} 
 							tooltip-content="Body Menu"
+							on-click={openNav}/>
+						<now-button-iconic 
+							id="displaybtn"
+							icon="checklist-fill" 
+							variant="tertiary" 
+							size="sm" 
+							config-aria={{"button":{"aria-label":"Settings"}}} 
+							tooltip-content="Show All Sections"
 							on-click={openNav}/>
 					</div>
 					<injured-details injuries={state.injuries.parts}></injured-details>
