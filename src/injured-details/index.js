@@ -113,20 +113,38 @@ const view = (state,{
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
-					<div id="lkneeCheckBox" slot="content">
-						<now-checkbox label="Left Knee"></now-checkbox>
+					<div id="left" slot="content">
+						<now-checkbox label="Left Thigh" checked={state.properties.lthigh}></now-checkbox>
 					</div>
-					<div id="rkneeCheckBox" slot="content">
-						<now-checkbox label="Right Knee"></now-checkbox>
+					<div id="right" slot="content">
+						<now-checkbox label="Right Thigh" checked={state.properties.rthigh}></now-checkbox>
 					</div>
-					<div id="lfootCheckBox" slot="content">
-						<now-checkbox label="Left Foot"></now-checkbox>
+					<div id="left" slot="content">
+						<now-checkbox label="Left Knee" checked={state.properties.lknee}></now-checkbox>
 					</div>
-					<div id="rfootCheckBox" slot="content">
-						<now-checkbox label="Right Foot"></now-checkbox>
+					<div id="right" slot="content">
+						<now-checkbox label="Right Knee" checked={state.properties.rknee}></now-checkbox>
+					</div>
+					<div id="left" slot="content">
+						<now-checkbox label="Left Shin" checked={state.properties.lshin}></now-checkbox>
+					</div>
+					<div id="right" slot="content">
+						<now-checkbox label="Right Shin" checked={state.properties.rshin}></now-checkbox>
+					</div>
+					<div id="left" slot="content">
+						<now-checkbox label="Left Calf" checked={state.properties.lcalf}></now-checkbox>
+					</div>
+					<div id="right" slot="content">
+						<now-checkbox label="Right Calf" checked={state.properties.rcalf}></now-checkbox>
+					</div>
+					<div id="left" slot="content">
+						<now-checkbox label="Left Foot" checked={state.properties.lfoot}></now-checkbox>
+					</div>
+					<div id="right" slot="content">
+						<now-checkbox label="Right Foot" checked={state.properties.rfoot}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
-						<now-textarea label="Short Description" />
+						<now-textarea label="Short Description" value={state.properties.legs} />
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
@@ -156,7 +174,18 @@ createCustomElement('injured-details', {
 		neck: {default: false},
 		torso: {default: false},
 		arms: {default: false},
-		legs: {default: false}
+		legs: {default: false},
+
+		lthigh: {default: false},
+		rthigh: {default: false},
+		lknee: {default: false},
+		rknee: {default: false},
+		lshin: {default: false},
+		rshin: {default: false},
+		lcalf: {default: false},
+		rcalf: {default: false},
+		lfoot: {default: false},
+		rfoot: {default: false},
 	},
 	view,
 	styles

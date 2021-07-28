@@ -105,9 +105,10 @@ const view = (state,{
 								coords="76,240,82,243,84,248,91,255,95,264,101,267,106,272,108,282,110,289,113,297,117,302,115,315,113,328,113,336,109,342,107,351,105,362,105,368,105,374,103,380,96,381,88,379,80,381,77,389,69,391,69,365,68,353,67,338,66,320,66,298,67,288,68,273,69,259,70,250"
 								shape="poly"
 								on-click={e => updateState({
-									path: 'legs',
-									value: {expanded: !state.legs.expanded},
-									operation: 'set'
+									
+									path: 'lthigh',
+									value: {checked: !state.lthigh.checked},
+									opetation: 'set'
 								})}/>
 								<p id="body_parts">Left Thigh</p>
 							<area
@@ -141,7 +142,7 @@ const view = (state,{
 								})}/>
 								<p id="body_parts">Right Knee</p>
 							<area
-								alt="Left_Leg"
+								alt="Left_Shin"
 								coords="66,409,95,414,96,426,95,437,96,450,91,469,89,482,86,498,90,511,92,521,93,532,71,529,72,509,69,490,66,475,60,456,60,440,60,427,62,419"
 								shape="poly"
 								on-click={e => updateState({
@@ -149,9 +150,9 @@ const view = (state,{
 									value: {expanded: !state.legs.expanded},
 									operation: 'set'
 								})}/>
-								<p id="body_parts">Left Leg</p>
+								<p id="body_parts">Left Shin</p>
 							<area
-								alt="Right_Leg" 
+								alt="Right_Shin" 
 								coords="144,415,177,418,177,435,177,447,175,461,171,473,169,489,165,502,165,514,166,524,167,530,146,528,149,510,150,501,152,486,147,474,145,455,142,443,143,434,144,425"
 								shape="poly"
 								on-click={e => updateState({
@@ -159,7 +160,7 @@ const view = (state,{
 									value: {expanded: !state.legs.expanded},
 									operation: 'set'
 								})}/>
-								<p id="body_parts">Right Leg</p>
+								<p id="body_parts">Right Shin</p>
 							<area
 								alt="Left_Foot" 
 								coords="71,530,91,531,95,546,95,558,95,564,93,573,88,578,75,577,66,569,67,559,68,547,70,541,71,537"
@@ -263,7 +264,7 @@ const view = (state,{
 								})}/>
 								<p id="body_parts">Right Hand</p>
 							<area
-								alt="Left Leg" 
+								alt="Left Calf" 
 								coords="65,303,113,302,113,313,111,329,107,345,104,357,104,369,104,381,102,396,99,403,94,412,95,426,95,437,94,449,90,466,87,485,87,499,90,523,86,517,81,515,77,516,75,519,73,522,71,526,70,513,71,506,69,497,68,488,66,479,65,470,63,464,61,456,60,449,60,441,60,433,62,418,64,408,66,398,68,384,69,369,68,360,66,349,65,336,64,324,64,316"
 								shape="poly"
 								on-click={e => updateState({
@@ -271,9 +272,9 @@ const view = (state,{
 									value: {expanded: !state.legs.expanded},
 									operation: 'set'
 								})}/>
-								<p id="body_parts">Left Leg</p>
+								<p id="body_parts">Left Calf</p>
 							<area 
-								alt="Right Leg" 
+								alt="Right Calf" 
 								coords="121,300,126,302,133,302,146,302,161,302,171,302,171,309,170,327,170,340,169,352,167,362,167,377,167,393,170,403,173,418,174,427,175,443,172,461,170,474,166,488,165,500,164,509,165,522,165,526,160,518,154,515,149,517,146,522,143,525,145,512,147,504,148,494,150,488,144,467,140,445,140,429,142,417,139,404,135,397,132,388,132,369,130,354,127,337,123,327,122,314"
 								shape="poly"
 								on-click={e => updateState({
@@ -281,7 +282,7 @@ const view = (state,{
 									value: {expanded: !state.legs.expanded},
 									operation: 'set'
 								})}/>
-								<p id="body_parts">Right Leg</p>
+								<p id="body_parts">Right Calf</p>
 							<area
 								alt="Left Foot" 
 								coords="72,526,76,520,80,516,85,518,89,524,91,529,92,535,93,544,94,554,93,563,91,571,87,576,83,575,79,575,76,572,73,570,70,566,66,563,66,556,66,548,67,540,69,534"
@@ -325,7 +326,18 @@ const view = (state,{
 						neck={state.neck.expanded}
 						torso={state.torso.expanded}
 						arms={state.arms.expanded}
-						legs={state.legs.expanded}/>
+						legs={state.legs.expanded}
+						
+						lthigh={state.lthigh.checked}
+						rthigh={state.rthigh.checked}
+						lknee={state.lknee.checked}
+						rknee={state.rknee.checked}
+						lshin={state.lshin.checked}
+						rshin={state.rshin.checked}
+						lcalf={state.lcalf.checked}
+						rcalf={state.rcalf.checked}
+						lfoot={state.lfoot.checked}
+						rfoot={state.rfoot.checked}/>
 				</section>
 				<p>It is tested in Chrome and Safari</p>
 			</div>
@@ -345,6 +357,18 @@ createCustomElement('x-650959-test-project', {
 		torso: {expanded: false},
 		arms: {expanded: false},
 		legs: {expanded: false},
+
+		lthigh: {checked: false},
+		rthigh: {checked: false},
+		lknee: {checked: false},
+		rknee: {checked: false},
+		lshin: {checked: false},
+		rshin: {checked: false},
+		lcalf: {checked: false},
+		rcalf: {checked: false},
+		lfoot: {checked: false},
+		rfoot: {checked: false},
+		
 		image_type: "https://i.ibb.co/FmffxXd/Body-Front.png",
 		usemap_type: "#frontmap",
 		image_back: false,
