@@ -24,10 +24,11 @@ const view = (state,{
 				<span>Please fill the boxes</span>
 			</div>
 			<form>
-			<now-accordion heading-level="3" trigger-icon={{"type":"plus-minus","position":"start"}}>
+			<now-accordion heading-level="3" trigger-icon={{"type":"plus-minus","position":"start"}} expandSingle="true">
 				<now-accordion-item 
 					header={{"label":"Head","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.head_section}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} 
+					expanded={state.head_section}>	
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
@@ -47,7 +48,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="headOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -63,7 +64,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="neckOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -79,7 +80,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>
 					<div id="torsoOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -101,7 +102,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="armOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -129,7 +130,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="legOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -151,7 +152,7 @@ const view = (state,{
 createCustomElement('injured-details', {
 	renderer: {type: snabbdom},
 	initialState: {
-		head_section : "false"
+		head_section : false
 	},
 	properties: {
 		injuries: {
