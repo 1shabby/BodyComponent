@@ -24,13 +24,12 @@ const view = (state,{
 				<span>Please fill the boxes</span>
 			</div>
 			<form>
-			<now-accordion heading-level="3" trigger-icon={{"type":"plus-minus","position":"start"}} expandSingle="true">
+			<now-accordion heading-level="3" trigger-icon={{"type":"plus-minus","position":"start"}}>
 				<now-accordion-item 
 					header={{"label":"Head","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} 
-					expanded={state.head_section}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.head}>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required />
+						<now-input label="Type of Force" required/>
 					</div>
 					<div id="eyesCheckBox" slot="content">
 						<now-checkbox label="Eyes"></now-checkbox>
@@ -48,7 +47,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image"></input>
 					</div>	
 					<div id="headOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -56,7 +55,7 @@ const view = (state,{
 				</now-accordion-item>
 				<now-accordion-item 
 					header={{"label":"Neck","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={false}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.neck}>	
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
@@ -64,7 +63,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image"></input>
 					</div>	
 					<div id="neckOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -72,7 +71,7 @@ const view = (state,{
 				</now-accordion-item>
 				<now-accordion-item 
 					header={{"label":"Torso","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}}>
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.torso}>
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
@@ -80,7 +79,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image"></input>
 					</div>
 					<div id="torsoOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -88,7 +87,7 @@ const view = (state,{
 				</now-accordion-item>
 				<now-accordion-item 
 					header={{"label":"Arms","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={false}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.arms}>	
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
@@ -102,7 +101,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image"></input>
 					</div>	
 					<div id="armOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -110,7 +109,7 @@ const view = (state,{
 				</now-accordion-item>
 				<now-accordion-item 
 					header={{"label":"Legs","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={false}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.legs}>	
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
@@ -130,7 +129,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image"></input>
 					</div>	
 					<div id="legOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -151,14 +150,26 @@ const view = (state,{
 
 createCustomElement('injured-details', {
 	renderer: {type: snabbdom},
-	initialState: {
-		head_section : false
-	},
+	initialState: {},
 	properties: {
-		injuries: {
-			default: []
-		}
+		head: {default: false},
+		neck: {default: false},
+		torso: {default: false},
+		arms: {default: false},
+		legs: {default: false}
 	},
 	view,
 	styles
-});
+});	
+
+/**
+ * 2 approaches: Delivery team and company
+ * 
+ * UI Builder
+ * Why is it important?
+ * 	- Non-technical approach
+ * What?
+ *  - 5 things
+ *  - 
+ * 
+ */
