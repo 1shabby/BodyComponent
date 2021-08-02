@@ -32,16 +32,16 @@ const view = (state,{
 						<now-input label="Type of Force" required/>
 					</div>
 					<div id="eyesCheckBox" slot="content">
-						<now-checkbox label="Eyes"></now-checkbox>
+						<now-checkbox label="Eyes" checked={false}></now-checkbox>
 					</div>
 					<div id="earsCheckBox" slot="content">
-						<now-checkbox label="Ears"></now-checkbox>
+						<now-checkbox label="Ears" checked={false}></now-checkbox>
 					</div>
 					<div id="noseCheckBox" slot="content">
-						<now-checkbox label="Nose"></now-checkbox>
+						<now-checkbox label="Nose" checked={false}></now-checkbox>
 					</div>
 					<div id="mouthCheckBox" slot="content">
-						<now-checkbox label="Mouth"></now-checkbox>
+						<now-checkbox label="Mouth" checked={false}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" />
@@ -92,10 +92,10 @@ const view = (state,{
 						<now-input label="Type of Force" required />
 					</div>
 					<div id="checkBox" slot="content">
-						<now-checkbox label="Left Hand"></now-checkbox>
+						<now-checkbox label="Left Hand" checked={state.properties.leftHand}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
-						<now-checkbox label="Right Hand"></now-checkbox>
+						<now-checkbox label="Right Hand" checked={false}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" />
@@ -113,38 +113,20 @@ const view = (state,{
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required />
 					</div>
-					<div id="left" slot="content">
-						<now-checkbox label="Left Thigh" checked={state.properties.lthigh}></now-checkbox>
+					<div id="lkneeCheckBox" slot="content">
+						<now-checkbox label="Left Knee" checked={false}></now-checkbox>
 					</div>
-					<div id="right" slot="content">
-						<now-checkbox label="Right Thigh" checked={state.properties.rthigh}></now-checkbox>
+					<div id="rkneeCheckBox" slot="content">
+						<now-checkbox label="Right Knee" checked={false}></now-checkbox>
 					</div>
-					<div id="left" slot="content">
-						<now-checkbox label="Left Knee" checked={state.properties.lknee}></now-checkbox>
+					<div id="lfootCheckBox" slot="content">
+						<now-checkbox label="Left Foot" checked={false}></now-checkbox>
 					</div>
-					<div id="right" slot="content">
-						<now-checkbox label="Right Knee" checked={state.properties.rknee}></now-checkbox>
-					</div>
-					<div id="left" slot="content">
-						<now-checkbox label="Left Shin" checked={state.properties.lshin}></now-checkbox>
-					</div>
-					<div id="right" slot="content">
-						<now-checkbox label="Right Shin" checked={state.properties.rshin}></now-checkbox>
-					</div>
-					<div id="left" slot="content">
-						<now-checkbox label="Left Calf" checked={state.properties.lcalf}></now-checkbox>
-					</div>
-					<div id="right" slot="content">
-						<now-checkbox label="Right Calf" checked={state.properties.rcalf}></now-checkbox>
-					</div>
-					<div id="left" slot="content">
-						<now-checkbox label="Left Foot" checked={state.properties.lfoot}></now-checkbox>
-					</div>
-					<div id="right" slot="content">
-						<now-checkbox label="Right Foot" checked={state.properties.rfoot}></now-checkbox>
+					<div id="rfootCheckBox" slot="content">
+						<now-checkbox label="Right Foot" checked={false}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
-						<now-textarea label="Short Description" value={state.properties.legs} />
+						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
@@ -176,16 +158,7 @@ createCustomElement('injured-details', {
 		arms: {default: false},
 		legs: {default: false},
 
-		lthigh: {default: false},
-		rthigh: {default: false},
-		lknee: {default: false},
-		rknee: {default: false},
-		lshin: {default: false},
-		rshin: {default: false},
-		lcalf: {default: false},
-		rcalf: {default: false},
-		lfoot: {default: false},
-		rfoot: {default: false},
+		leftHand: {default: false}
 	},
 	view,
 	styles
