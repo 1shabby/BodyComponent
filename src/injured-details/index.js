@@ -88,9 +88,25 @@ const view = (state,{
 				<now-accordion-item 
 					header={{"label":"Arms","weight":"bold","size":"sm","variant":"secondary"}} 
 					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} 
-					expanded={state.properties.leftHand || state.properties.rightHand}>	
+					expanded={state.properties.leftHand || state.properties.rightHand ||
+							  state.properties.leftUpperArm || state.properties.rightUpperArm ||
+							  state.properties.leftForearm || state.properties.rightForearm}>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required={state.properties.leftHand || state.properties.rightHand} />
+						<now-input label="Type of Force" required={state.properties.leftHand || state.properties.rightHand ||
+																   state.properties.leftUpperArm || state.properties.rightUpperArm ||
+							  									   state.properties.leftForearm || state.properties.rightForearm} />
+					</div>
+					<div id="checkBox" slot="content">
+						<now-checkbox id="left" label="Left Upper Arm" checked={state.properties.leftUpperArm}></now-checkbox>
+					</div>
+					<div id="checkBox" slot="content">
+						<now-checkbox id="right" label="Right Upper Arm" checked={state.properties.rightUpperArm}></now-checkbox>
+					</div>
+					<div id="checkBox" slot="content">
+						<now-checkbox id="left" label="Left Forearm" checked={state.properties.leftForearm}></now-checkbox>
+					</div>
+					<div id="checkBox" slot="content">
+						<now-checkbox id="right" label="Right Forearm" checked={state.properties.rightForearm}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
 						<now-checkbox id="left" label="Left Hand" checked={state.properties.leftHand}></now-checkbox>
@@ -99,7 +115,9 @@ const view = (state,{
 						<now-checkbox id="right" label="Right Hand" checked={state.properties.rightHand}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
-						<now-textarea label="Short Description" required={state.properties.leftHand || state.properties.rightHand}/>
+						<now-textarea label="Short Description" required={state.properties.leftHand || state.properties.rightHand ||
+							  											  state.properties.leftUpperArm || state.properties.rightUpperArm ||
+							  											  state.properties.leftForearm || state.properties.rightForearm}/>
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
@@ -113,11 +131,13 @@ const view = (state,{
 					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.leftThigh || state.properties.rightThigh || 
 																									state.properties.leftKnee || state.properties.rightKnee ||
 																									state.properties.leftShin || state.properties.rightShin ||
+																									state.properties.leftCalf || state.properties.rightCalf ||
 																									state.properties.leftFoot || state.properties.rightFoot }>	
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required={state.properties.leftThigh || state.properties.rightThigh || 
 																									state.properties.leftKnee || state.properties.rightKnee ||
 																									state.properties.leftShin || state.properties.rightShin ||
+																									state.properties.leftCalf || state.properties.rightCalf ||
 																									state.properties.leftFoot || state.properties.rightFoot }/>
 					</div>
 					<div id="lthighCheckBox" slot="content">
@@ -138,6 +158,12 @@ const view = (state,{
 					<div id="rthighCheckBox" slot="content">
 						<now-checkbox id="right" label="Right Shin" checked={state.properties.rightShin}></now-checkbox>
 					</div>
+					<div id="lthighCheckBox" slot="content">
+						<now-checkbox id="left" label="Left Calf" checked={state.properties.leftCalf}></now-checkbox>
+					</div>
+					<div id="rthighCheckBox" slot="content">
+						<now-checkbox id="right" label="Right Calf" checked={state.properties.rightCalf}></now-checkbox>
+					</div>
 					<div id="lfootCheckBox" slot="content">
 						<now-checkbox id="left" label="Left Foot" checked={state.properties.leftFoot}></now-checkbox>
 					</div>
@@ -148,6 +174,7 @@ const view = (state,{
 						<now-textarea label="Short Description" required={state.properties.leftThigh || state.properties.rightThigh || 
 																									state.properties.leftKnee || state.properties.rightKnee ||
 																									state.properties.leftShin || state.properties.rightShin ||
+																									state.properties.leftCalf || state.properties.rightCalf ||
 																									state.properties.leftFoot || state.properties.rightFoot }/>
 					</div>
 					<div id="image-file" slot="content">
@@ -179,6 +206,10 @@ createCustomElement('injured-details', {
 		arms: {default: false},
 		legs: {default: false},
 		//Arm Specific Sections
+		leftUpperArm: {default: false},
+		rightUpperArm: {default: false},
+		leftForearm: {default: false},
+		rightForearm: {default: false},
 		leftHand: {default: false},
 		rightHand: {default: false},
 		//Leg Specific Sections

@@ -58,20 +58,50 @@ const view = (state,{
 								shape="poly"
 								on-click={e => expandAccordion(e)}/>
 								<p id="body_parts">Abdomen</p>
-							<area
+							<area 
 								id='arm'
-								alt="Left_Arm" 
-								coords="33,259,36,251,39,242,40,233,40,221,45,207,47,195,49,184,52,166,53,157,52,149,53,139,52,124,56,113,64,107,73,104,73,111,71,123,71,133,70,142,75,149,75,168,73,178,72,191,71,201,70,213,66,224,61,238,56,248,53,257,49,265"
+								alt="Left Upper Arm" 
+								coords="47,194,69,200,74,172,76,151,71,140,72,134,76,102,62,107,53,114,52,124,52,134,53,146,54,151,52,161,49,173" 
 								shape="poly"
-								on-click={e => expandAccordion(e)}/>
-								<p id="body_parts">Left Arm</p>
-							<area
-								id='arm'
-								alt="Right_Arm" 
-								coords="167,137,170,129,169,122,169,116,168,110,170,105,177,108,182,114,185,120,186,128,187,136,186,145,183,153,187,163,188,171,188,181,190,193,194,203,195,213,197,222,197,230,199,239,200,246,202,252,204,257,198,259,192,260,187,264,184,254,180,246,177,237,171,226,169,216,168,201,166,191,164,180,163,167,162,155,162,147"
+								on-click={e => updateState({
+									path: 'leftUpperArm',
+									value: {expanded: !state.leftUpperArm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Upper Left Arm</p>
+    						<area
+								id='arm' 
+								alt="Left Forearm" 
+								coords="46,194,70,201,70,212,63,230,59,242,54,254,48,266,32,260,40,238,40,217,44,206" 
 								shape="poly"
-								on-click={e => expandAccordion(e)}/>
-								<p id="body_parts">Right Arm</p>
+								on-click={e => updateState({
+									path: 'leftForearm',
+									value: {expanded: !state.leftForearm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Left Forearm</p>
+    						<area
+								id='arm' 
+								alt="Right Upper Arm" 
+								coords="168,199,189,194,188,173,184,150,187,127,182,111,170,105,161,102,166,137,161,149,164,173,166,186" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'rightUpperArm',
+									value: {expanded: !state.rightUpperArm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Upper Right Arm</p>
+    						<area
+								id='arm' 
+								alt="Right Forearm" 
+								coords="167,200,189,194,195,205,198,222,199,239,204,257,188,264,178,243,173,226,168,217" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'rightForearm',
+									value: {expanded: !state.rightForearm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Right Forearm</p>
 							<area
 								id='arm'
 								alt="Left_Hand" title="Left Hand"
@@ -214,18 +244,47 @@ const view = (state,{
 								<p id="body_parts">Buttocks</p>
 							<area
 								id='arm' 
-								alt="Left Arm" 
-								coords="63,107,52,119,51,132,51,144,53,156,51,169,48,184,48,197,43,207,41,222,40,234,39,243,35,252,34,260,49,265,54,256,59,241,64,228,67,217,67,198,70,186,72,175,73,165,72,151,66,128,64,117"
+								alt="Upper Left Arm" 
+								coords="60,110,68,138,73,151,73,167,72,182,68,196,47,194,51,163,53,150,51,135,52,120" 
 								shape="poly"
-								on-click={e => expandAccordion(e)}/>
-								<p id="body_parts">Left Arm</p>
-							<area
-								id='arm' 
-								alt="Right Arm" 
-								coords="171,107,181,116,183,128,183,146,183,163,185,175,187,192,189,200,192,206,195,224,195,235,198,245,201,258,195,260,186,263,178,251,175,236,170,226,167,212,166,189,164,180,162,166,163,147,169,128"
+								on-click={e => updateState({
+									path: 'leftUpperArm',
+									value: {expanded: !state.leftUpperArm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Upper Left Arm</p>
+    						<area 
+								id='arm'
+								alt="Upper Right Arm" 
+								coords="174,107,166,139,162,151,163,181,168,196,187,195,183,156,184,130,182,117" 
 								shape="poly"
-								on-click={e => expandAccordion(e)}/>
-								<p id="body_parts">Right Arm</p>
+								on-click={e => updateState({
+									path: 'rightUpperArm',
+									value: {expanded: !state.rightUpperArm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Upper Right Arm</p>
+    						<area 
+								id='arm'
+								alt="Left Forearm" 
+								coords="46,194,67,196,67,211,65,225,59,238,55,253,48,266,34,259,41,232,40,220" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'leftForearm',
+									value: {expanded: !state.leftForearm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Left Forearm</p>
+    						<area 
+								id='arm'
+								alt="Right Forearm"
+								coords="168,197,188,195,193,212,194,231,196,241,201,259,187,265,177,242,168,220" 
+								shape="poly"on-click={e => updateState({
+									path: 'rightForearm',
+									value: {expanded: !state.rightForearm.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Right Forearm</p>
 							<area
 								id='arm'
 								alt="Left Hand" 
@@ -248,20 +307,48 @@ const view = (state,{
 									operation: 'set'
 								})}/>
 								<p id="body_parts">Right Hand</p>
-							<area
-								id='leg'
-								alt="Left Leg" 
-								coords="65,303,113,302,113,313,111,329,107,345,104,357,104,369,104,381,102,396,99,403,94,412,95,426,95,437,94,449,90,466,87,485,87,499,90,523,86,517,81,515,77,516,75,519,73,522,71,526,70,513,71,506,69,497,68,488,66,479,65,470,63,464,61,456,60,449,60,441,60,433,62,418,64,408,66,398,68,384,69,369,68,360,66,349,65,336,64,324,64,316"
-								shape="poly"
-								on-click={e => expandAccordion(e)}/>
-								<p id="body_parts">Left Leg</p>
 							<area 
 								id='leg'
-								alt="Right Leg" 
-								coords="121,300,126,302,133,302,146,302,161,302,171,302,171,309,170,327,170,340,169,352,167,362,167,377,167,393,170,403,173,418,174,427,175,443,172,461,170,474,166,488,165,500,164,509,165,522,165,526,160,518,154,515,149,517,146,522,143,525,145,512,147,504,148,494,150,488,144,467,140,445,140,429,142,417,139,404,135,397,132,388,132,369,130,354,127,337,123,327,122,314"
+								alt="Left Thigh" 
+								coords="114,300,101,302,65,302,65,334,67,358,69,367,67,394,94,413,103,393,104,361,108,341,113,323" 
 								shape="poly"
-								on-click={e => expandAccordion(e)}/>
-								<p id="body_parts">Right Leg</p>
+								on-click={e => updateState({
+									path: 'leftThigh',
+									value: {expanded: !state.leftThigh.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Left Thigh</p>
+    						<area 
+								id='leg'
+								alt="Right Thigh" 
+								coords="122,300,134,302,170,302,170,338,166,366,166,379,169,397,142,412,133,396,131,375,132,359,126,338,122,320" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'rightThigh',
+									value: {expanded: !state.rightThigh.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Right Thigh</p>
+    						<area 
+								alt="Left Calf"
+								coords="68,396,93,413,95,441,94,450,91,463,87,479,85,490,87,500,89,510,90,526,87,520,82,514,77,518,71,524,70,502,68,484,62,462,60,433,64,412" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'leftCalf',
+									value: {expanded: !state.leftCalf.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Left Calf</p>
+    						<area 
+								alt="Right Calf" 
+								coords="141,413,169,398,173,422,176,437,174,454,170,475,166,493,164,507,165,524,158,518,152,514,146,521,146,509,150,492,147,474,142,452,141,433" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'rightCalf',
+									value: {expanded: !state.rightCalf.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Right Calf</p>
 							<area
 								id='leg'
 								alt="Left Foot" 
@@ -309,6 +396,10 @@ const view = (state,{
 						arms={state.arms.expanded}
 						legs={state.legs.expanded}
 
+						leftUpperArm={state.leftUpperArm.expanded}
+						rightUpperArm={state.rightUpperArm.expanded}
+						leftForearm={state.leftForearm.expanded}
+						rightForearm={state.rightForearm.expanded}
 						leftHand={state.leftHand.expanded}
 						rightHand={state.rightHand.expanded}
 						
@@ -318,6 +409,8 @@ const view = (state,{
 						rightKnee={state.rightKnee.expanded}
 						leftShin={state.leftShin.expanded}
 						rightShin={state.rightShin.expanded}
+						leftCalf={state.leftCalf.expanded}
+						rightCalf={state.rightCalf.expanded}
 						leftFoot={state.leftFoot.expanded}
 						rightFoot={state.rightFoot.expanded}/>
 				</section>
@@ -340,6 +433,10 @@ createCustomElement('x-650959-test-project', {
 		arms: {expanded: false},
 		legs: {expanded: false},
 
+		leftUpperArm: {expanded: false},
+		rightUpperArm: {expanded: false},
+		leftForearm: {expanded:false},
+		rightForearm: {expanded:false},
 		leftHand: {expanded: false},
 		rightHand: {expanded: false},
 
