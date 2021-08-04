@@ -32,16 +32,16 @@ const view = (state,{
 						<now-input label="Type of Force" required/>
 					</div>
 					<div id="eyesCheckBox" slot="content">
-						<now-checkbox label="Eyes" checked={false}></now-checkbox>
+						<now-checkbox id="left" label="Eyes" checked={false}></now-checkbox>
 					</div>
 					<div id="earsCheckBox" slot="content">
-						<now-checkbox label="Ears" checked={false}></now-checkbox>
+						<now-checkbox id="right" label="Ears" checked={false}></now-checkbox>
 					</div>
 					<div id="noseCheckBox" slot="content">
-						<now-checkbox label="Nose" checked={false}></now-checkbox>
+						<now-checkbox id="left" label="Nose" checked={false}></now-checkbox>
 					</div>
 					<div id="mouthCheckBox" slot="content">
-						<now-checkbox label="Mouth" checked={false}></now-checkbox>
+						<now-checkbox id="right" label="Mouth" checked={false}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" />
@@ -87,18 +87,19 @@ const view = (state,{
 				</now-accordion-item>
 				<now-accordion-item 
 					header={{"label":"Arms","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.arms}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} 
+					expanded={state.properties.leftHand || state.properties.rightHand}>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required />
+						<now-input label="Type of Force" required={state.properties.leftHand || state.properties.rightHand} />
 					</div>
 					<div id="checkBox" slot="content">
-						<now-checkbox label="Left Hand" checked={state.properties.leftHand}></now-checkbox>
+						<now-checkbox id="left" label="Left Hand" checked={state.properties.leftHand}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
-						<now-checkbox label="Right Hand" checked={false}></now-checkbox>
+						<now-checkbox id="right" label="Right Hand" checked={state.properties.rightHand}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
-						<now-textarea label="Short Description" />
+						<now-textarea label="Short Description" required={state.properties.leftHand || state.properties.rightHand}/>
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
@@ -109,24 +110,45 @@ const view = (state,{
 				</now-accordion-item>
 				<now-accordion-item 
 					header={{"label":"Legs","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.legs}>	
+					caption={{"label":"Sub-label 1","style":"italic","variant":"primary"}} expanded={state.properties.leftThigh || state.properties.rightThigh || 
+																									state.properties.leftKnee || state.properties.rightKnee ||
+																									state.properties.leftShin || state.properties.rightShin ||
+																									state.properties.leftFoot || state.properties.rightFoot }>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required />
+						<now-input label="Type of Force" required={state.properties.leftThigh || state.properties.rightThigh || 
+																									state.properties.leftKnee || state.properties.rightKnee ||
+																									state.properties.leftShin || state.properties.rightShin ||
+																									state.properties.leftFoot || state.properties.rightFoot }/>
+					</div>
+					<div id="lthighCheckBox" slot="content">
+						<now-checkbox id="left" label="Left Thigh" checked={state.properties.leftThigh}></now-checkbox>
+					</div>
+					<div id="rthighCheckBox" slot="content">
+						<now-checkbox id="right" label="Right Thigh" checked={state.properties.rightThigh}></now-checkbox>
 					</div>
 					<div id="lkneeCheckBox" slot="content">
-						<now-checkbox label="Left Knee" checked={false}></now-checkbox>
+						<now-checkbox id="left" label="Left Knee" checked={state.properties.leftKnee}></now-checkbox>
 					</div>
 					<div id="rkneeCheckBox" slot="content">
-						<now-checkbox label="Right Knee" checked={false}></now-checkbox>
+						<now-checkbox id="right" label="Right Knee" checked={state.properties.rightKnee}></now-checkbox>
+					</div>
+					<div id="lthighCheckBox" slot="content">
+						<now-checkbox id="left" label="Left Shin" checked={state.properties.leftShin}></now-checkbox>
+					</div>
+					<div id="rthighCheckBox" slot="content">
+						<now-checkbox id="right" label="Right Shin" checked={state.properties.rightShin}></now-checkbox>
 					</div>
 					<div id="lfootCheckBox" slot="content">
-						<now-checkbox label="Left Foot" checked={false}></now-checkbox>
+						<now-checkbox id="left" label="Left Foot" checked={state.properties.leftFoot}></now-checkbox>
 					</div>
 					<div id="rfootCheckBox" slot="content">
-						<now-checkbox label="Right Foot" checked={false}></now-checkbox>
+						<now-checkbox id="right" label="Right Foot" checked={state.properties.rightFoot}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
-						<now-textarea label="Short Description" />
+						<now-textarea label="Short Description" required={state.properties.leftThigh || state.properties.rightThigh || 
+																									state.properties.leftKnee || state.properties.rightKnee ||
+																									state.properties.leftShin || state.properties.rightShin ||
+																									state.properties.leftFoot || state.properties.rightFoot }/>
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image"></input>
@@ -138,7 +160,6 @@ const view = (state,{
 				</now-accordion>
 				<div id="Injuries">
 					<now-input id="injure" value={state.properties.injuries} placeholder="Click parts on the image" label="Body parts injured" disabled={true} required />
-					<now-input label="Extent of Injuries" required />
 				</div>
 				<div>
 					<now-button id="submit" label="Submit" variant="primary" size="md" icon="" tooltip-content=""/>
@@ -157,8 +178,20 @@ createCustomElement('injured-details', {
 		torso: {default: false},
 		arms: {default: false},
 		legs: {default: false},
-
-		leftHand: {default: false}
+		//Arm Specific Sections
+		leftHand: {default: false},
+		rightHand: {default: false},
+		//Leg Specific Sections
+		leftThigh: {default: false},
+		rightThigh: {default: false},
+		leftKnee: {default: false},
+		rightKnee: {default: false},
+		leftShin: {default: false},
+		rightShin: {default: false},
+		leftCalf: {default: false},
+		rightCalf: {default: false},
+		leftFoot: {default: false},
+		rightFoot: {default: false}
 	},
 	view,
 	styles
