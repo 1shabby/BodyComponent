@@ -47,7 +47,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="headOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -63,7 +63,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="neckOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -79,7 +79,7 @@ const view = (state,{
 						<now-textarea label="Short Description" />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>
 					<div id="torsoOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -102,7 +102,7 @@ const view = (state,{
 						<now-textarea label="Short Description" required={state.properties.leftHand || state.properties.rightHand}/>
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="armOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -151,7 +151,7 @@ const view = (state,{
 																									state.properties.leftFoot || state.properties.rightFoot }/>
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
 					</div>	
 					<div id="legOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
