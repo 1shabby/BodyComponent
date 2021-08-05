@@ -381,7 +381,7 @@ const view = (state,{
 							tooltip-content="Rotate"
 							on-click= {
 								e => updateState({
-									image_type: (state.image_back == true) ? "https://i.ibb.co/FmffxXd/Body-Front.png" : "https://i.ibb.co/T42LWdj/Body-Back.png",
+									image_type: (state.image_back == true) ? "https://i.ibb.co/ccb4zbG/Body-Front.png" : "https://i.ibb.co/tK26PXK/Body-Back.png",
 									usemap_type: (state.map_back == true) ?  "#frontmap" : "#backmap",
 									image_back: !state.image_back,
 									map_back: !state.map_back
@@ -461,7 +461,7 @@ createCustomElement('x-650959-test-project', {
 		leftFoot: {expanded: false},
 		rightFoot: {expanded: false},
 
-		image_type: "https://i.ibb.co/FmffxXd/Body-Front.png",
+		image_type: "https://i.ibb.co/ccb4zbG/Body-Front.png",
 		usemap_type: "#frontmap",
 		image_back: false,
 		map_back: false 
