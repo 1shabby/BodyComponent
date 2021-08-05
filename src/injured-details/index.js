@@ -26,24 +26,30 @@ const view = (state,{
 			<now-accordion heading-level="3" expandSingle={true} trigger-icon={{"type":"plus-minus","position":"start"}}>
 				<now-accordion-item 
 					header={{"label":"Head","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Select the head on the image to open","style":"italic","variant":"primary"}} expanded={state.properties.head} disabled={!state.properties.head}>	
+					caption={{"label":"Select the head on the image to open","style":"italic","variant":"primary"}} 
+					expanded={state.properties.head || state.properties.eyes ||
+							  state.properties.ears || state.properties.nose || state.properties.mouth} 
+					disabled={!(state.properties.head || state.properties.eyes ||
+								state.properties.ears || state.properties.nose || state.properties.mouth)}>	
 					<div id="attack" slot="content">
 						<now-input label="Type of Force" required/>
 					</div>
 					<div id="eyesCheckBox" slot="content">
-						<now-checkbox id="left" label="Eyes" checked={false} disabled={true}></now-checkbox>
+						<now-checkbox id="left" label="Eyes" checked={state.properties.eyes} disabled={true}></now-checkbox>
 					</div>
 					<div id="earsCheckBox" slot="content">
-						<now-checkbox id="right" label="Ears" checked={false} disabled={true}></now-checkbox>
+						<now-checkbox id="right" label="Ears" checked={state.properties.ears} disabled={true}></now-checkbox>
 					</div>
 					<div id="noseCheckBox" slot="content">
-						<now-checkbox id="left" label="Nose" checked={false} disabled={true}></now-checkbox>
+						<now-checkbox id="left" label="Nose" checked={state.properties.nose} disabled={true}></now-checkbox>
 					</div>
 					<div id="mouthCheckBox" slot="content">
-						<now-checkbox id="right" label="Mouth" checked={false} disabled={true}></now-checkbox>
+						<now-checkbox id="right" label="Mouth" checked={state.properties.mouth} disabled={true}></now-checkbox>
 					</div>
 					<div id="Description" slot="content">
-						<now-textarea label="Short Description" />
+						<now-textarea label="Short Description" 
+						required={state.properties.head || state.properties.eyes ||
+								  state.properties.ears || state.properties.nose || state.properties.mouth} />
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>

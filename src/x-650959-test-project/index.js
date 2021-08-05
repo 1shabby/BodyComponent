@@ -31,6 +31,71 @@ const view = (state,{
 						<img id="front" src={state.image_type} usemap={state.usemap_type} alt="Human Body"/>
 						<map id="front_image" name="frontmap">
 							<area 
+								id='ears'
+								alt="Ears" 
+								coords="100,43,101,62,92,58,89,50,90,46" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'ears',
+									value: {expanded: !state.ears.expanded},
+									operation: 'set'
+									})}/>
+								<p id="body_parts">Ears</p>
+							<area 
+								id='ears'
+								alt="Ears" 
+								coords="143,40,148,49,147,55,145,59,136,61,136,40" 
+								shape="poly"									on-click={e => updateState({
+									path: 'ears',
+									value: {expanded: !state.ears.expanded},
+									operation: 'set'
+								})}/>
+								<p id="body_parts">Ears</p>
+							<area 
+								id='eyes'
+								alt="Eyes" 
+								coords="101,41,114,41,114,51,101,51" 
+								shape="poly"
+								on-click={e => updateState({
+									path: 'eyes',
+									value: {expanded: !state.eyes.expanded},
+									operation: 'set'
+								})}/>
+							<p id="body_parts">Eyes</p>
+							<area 
+								id='eyes'
+								alt="Eyes" 
+								coords="122,41,135,41,135,51,122,51"
+								shape="poly"
+								on-click={e => updateState({
+									path: 'eyes',
+									value: {expanded: !state.eyes.expanded},
+									operation: 'set'
+								})}/>
+								<p id="body_parts">Eyes</p>
+							<area 
+								id='nose'
+								alt="Nose" 
+								coords="118,46,116,52,110,55,112,60,117,60,121,60,126,59,127,55,123,53,120,50,118,46"
+								shape="poly"
+								on-click={e => updateState({
+									path: 'nose',
+									value: {expanded: !state.nose.expanded},
+									operation: 'set'
+								})}/>
+								<p id="body_parts">Nose</p>
+							<area 
+								id='mouth'
+								alt="Mouth" 
+								coords="108,61,129,61,129,74,108,74"
+								shape="poly"
+								on-click={e => updateState({
+									path: 'mouth',
+									value: {expanded: !state.mouth.expanded},
+									operation: 'set'
+								})}/>
+								<p id="body_parts">Mouth</p>
+							<area 
 								id="head"
 								alt="Head" 
 								coords="102,74,107,78,113,84,120,85,127,79,134,75,137,68,139,61,145,60,147,51,145,44,145,34,144,25,140,17,133,9,123,7,114,5,105,8,98,14,95,23,93,31,93,40,93,46,90,53,92,60,98,61,100,68"
