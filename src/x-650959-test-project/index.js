@@ -396,6 +396,11 @@ const view = (state,{
 						arms={state.arms.expanded}
 						legs={state.legs.expanded}
 
+						eyes={state.eyes.expanded}
+						ears={state.ears.expanded}
+						mouth={state.mouth.expanded}
+						nose={state.nose.expanded}
+
 						leftUpperArm={state.leftUpperArm.expanded}
 						rightUpperArm={state.rightUpperArm.expanded}
 						leftForearm={state.leftForearm.expanded}
@@ -432,6 +437,11 @@ createCustomElement('x-650959-test-project', {
 		torso: {expanded: false},
 		arms: {expanded: false},
 		legs: {expanded: false},
+
+		eyes: {expanded: false},
+		ears: {expanded: false},
+		nose: {expanded: false},
+		mouth: {expanded: false},
 
 		leftUpperArm: {expanded: false},
 		rightUpperArm: {expanded: false},
