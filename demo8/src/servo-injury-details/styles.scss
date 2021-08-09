@@ -1,0 +1,70 @@
+@import '@servicenow/sass-kit/host';
+now-input{
+    margin:20px;
+    margin-left: 10px;
+    width: 40%;
+}
+
+now-textarea{
+    margin: 20px;
+    margin-left: 10px;
+    margin-right: 250px;
+}
+
+now-checkbox{
+    margin: 10px;
+}
+
+#header{
+    margin: 10px 10px 10px 13px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+}
+
+#sub_header{
+    margin: 10px 10px 10px 13px;
+    font-size: 1rem;
+    color: RGBA(var(--now-color--neutral-7,135,147,148));
+}
+
+#submit{
+    margin: 10px;
+    float: right;
+}
+
+#left{
+    float: left;
+}
+
+#right{
+    float: center;
+}
+
+#attach_image{
+    margin: 20px;
+    margin-left: px;
+}
+
+now-textarea{
+    margin-top: 10px;
+    width: 90%;
+    height: auto;
+}
+
+input{ 
+    margin: 20px;
+    margin-left: 10px;
+}
+
+aside{
+    float: left;
+    margin-left: 1%;
+    width:35%;
+    height:47%;
+    padding: 8px;
+}
+
+now-accordion-item{
+    display : block;
+}

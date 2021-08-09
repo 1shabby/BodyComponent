@@ -1,0 +1,94 @@
+@import '@servicenow/sass-kit/host';
+#front_img{
+    position:relative;
+}
+
+#front {
+    float: left;
+    border: 2px solid black;
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+#back_button{
+    position:absolute;
+    margin-top: 10px;
+    left: 210px;
+    cursor:pointer;
+}
+
+#openbtn{
+    position:absolute;
+    margin-top: 33px;
+    left:210px;
+    cursor:pointer;
+}
+
+#displaybtn{
+    position:absolute;
+    margin-top: 56px;
+    left:210px;
+    cursor:pointer;
+}
+
+//Not working in Safari.
+area{
+    cursor: pointer;
+}
+
+#body_parts{
+    display: none;
+    position: absolute;
+    width: 83px;
+    padding: 8px;
+    left: 5px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;  
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    text-align:center;
+}
+area:hover + #body_parts{
+    display: block;
+}
+
+#mySidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5;
+}
+
+#mySidebar a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#mySidebar #closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#openbtn{
+    cursor: pointer;
+}
+
+#question{
+    transition: margin-left .5s;
+    padding: 20px;
+}
