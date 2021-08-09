@@ -450,7 +450,7 @@ const view = (state, {updateState}) => {
 								}
 								/>
 						</div>
-						<injured-details 
+						<servo-injury-details 
 							head={state.head.expanded}
 							neck={state.neck.expanded}
 							torso={state.torso.expanded}
