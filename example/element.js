@@ -1,8 +1,8 @@
-import '../src/x-650959-test-project';
+import '../src/servo-clickable-body';
 
 const el = document.createElement('DIV');
 document.body.appendChild(el);
 
 el.innerHTML = `		
-<x-650959-test-project></x-650959-test-project>
+<servo-clickable-body></servo-clickable-body>
 `;

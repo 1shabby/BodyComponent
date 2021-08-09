@@ -1,19 +1,13 @@
 import {createCustomElement} from '@servicenow/ui-core';
 import snabbdom from '@servicenow/ui-renderer-snabbdom';
-import '@servicenow/now-dropdown';
 import '@servicenow/now-input';
 import '@servicenow/now-button';
-import '@servicenow/now-select';
 import '@servicenow/now-checkbox';
 import '@servicenow/now-textarea';
-import '@servicenow/now-radio-buttons';
 import '@servicenow/now-accordion';
 import styles from './styles.scss';
 
-
-const view = (state,{
-	updateState
-}) => {
+const view = (state, {updateState}) => {
 	return (
 		<aside>
 			<div id="header">
@@ -35,16 +29,16 @@ const view = (state,{
 						<now-input label="Type of Force" required/>
 					</div>
 					<div id="eyesCheckBox" slot="content">
-						<now-checkbox id="left" label="Eyes" checked={state.properties.eyes} disabled={true}></now-checkbox>
+						<now-checkbox id="left" label="Eyes" checked={state.properties.eyes} disabled={true} />
 					</div>
 					<div id="earsCheckBox" slot="content">
-						<now-checkbox id="right" label="Ears" checked={state.properties.ears} disabled={true}></now-checkbox>
+						<now-checkbox id="right" label="Ears" checked={state.properties.ears} disabled={true}/>
 					</div>
 					<div id="noseCheckBox" slot="content">
-						<now-checkbox id="left" label="Nose" checked={state.properties.nose} disabled={true}></now-checkbox>
+						<now-checkbox id="left" label="Nose" checked={state.properties.nose} disabled={true}/>
 					</div>
 					<div id="mouthCheckBox" slot="content">
-						<now-checkbox id="right" label="Mouth" checked={state.properties.mouth} disabled={true}></now-checkbox>
+						<now-checkbox id="right" label="Mouth" checked={state.properties.mouth} disabled={true}/>
 					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" 
@@ -52,10 +46,10 @@ const view = (state,{
 								  state.properties.ears || state.properties.nose || state.properties.mouth} />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"/>
 					</div>	
 					<div id="headOfficerCheckBox" slot="content">
-						<now-checkbox label="Officers involved?"></now-checkbox>
+						<now-checkbox label="Officers involved?"/>
 					</div>		
 				</now-accordion-item>
 				<now-accordion-item 
@@ -68,10 +62,10 @@ const view = (state,{
 						<now-textarea label="Short Description" required={state.properties.neck} />
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"/>
 					</div>	
 					<div id="neckOfficerCheckBox" slot="content">
-						<now-checkbox label="Officers involved?"></now-checkbox>
+						<now-checkbox label="Officers involved?"/>
 					</div>		
 				</now-accordion-item>
 				<now-accordion-item 
@@ -84,7 +78,7 @@ const view = (state,{
 						<now-textarea label="Short Description" required={state.properties.torso}/>
 					</div>
 					<div id="image-file" slot="content">
-						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"></input>
+						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"/>
 					</div>
 					<div id="torsoOfficerCheckBox" slot="content">
 						<now-checkbox label="Officers involved?"></now-checkbox>
@@ -243,15 +237,3 @@ createCustomElement('injured-details', {
 	view,
 	styles
 });	
-
-/**
- * 2 approaches: Delivery team and company
- * 
- * UI Builder
- * Why is it important?
- * 	- Non-technical approach
- * What?
- *  - 5 things
- *  - 
- * 
- */

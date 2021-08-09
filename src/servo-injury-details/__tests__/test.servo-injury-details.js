@@ -1,4 +1,4 @@
-describe('x-650959-test-project Test', () => {
+describe('servo-injury-details Test', () => {
 	it('should be true', () => {
 		expect(true).toBe(true);
 	});

@@ -1,6 +1,6 @@
 {
 	"components": {
-	    "x-650959-test-project": {
+	    "servo-clickable-body": {
 	        "innerComponents": [],
 			"uiBuilder": {
 				"associatedTypes": ["global.core", "global.landing-page"],
@@ -11,5 +11,5 @@
 			}
 	    }
 	},
-	"scopeName": "x_650959_test_pr_0"
+	"scopeName": "x_servo_servos_c_0"
 }
