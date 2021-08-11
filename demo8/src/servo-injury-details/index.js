@@ -26,7 +26,8 @@ const view = (state) => {
 					disabled={!(state.properties.head || state.properties.eyes ||
 								state.properties.ears || state.properties.nose || state.properties.mouth)}>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required/>
+						<now-input label="Weapon(s) used" required={state.properties.head || state.properties.eyes ||
+							  state.properties.ears || state.properties.nose || state.properties.mouth}/>
 					</div>
 					<div id="eyesCheckBox" slot="content">
 						<now-checkbox id="left" label="Eyes" checked={state.properties.eyes} readonly={true}/>
@@ -56,7 +57,7 @@ const view = (state) => {
 					header={{"label":"Neck","weight":"bold","size":"sm","variant":"secondary"}} 
 					caption={{"label":"Select the neck on the image to open","style":"italic","variant":"primary"}} expanded={state.properties.neck} disabled={!state.properties.neck}>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required={state.properties.neck} />
+						<now-input label="Weapon(s) used" required={state.properties.neck} />
 					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" required={state.properties.neck} />
@@ -72,7 +73,7 @@ const view = (state) => {
 					header={{"label":"Torso","weight":"bold","size":"sm","variant":"secondary"}} 
 					caption={{"label":"Click on a part of the torso to open","style":"italic","variant":"primary"}} expanded={state.properties.torso} disabled={!state.properties.torso}>
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required={state.properties.torso}/>
+						<now-input label="Weapon(s) used" required={state.properties.torso}/>
 					</div>
 					<div id="Description" slot="content">
 						<now-textarea label="Short Description" required={state.properties.torso}/>
@@ -95,7 +96,7 @@ const view = (state) => {
 								state.properties.leftUpperArm || state.properties.rightUpperArm ||
 								state.properties.leftForearm || state.properties.rightForearm)}>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required={state.properties.leftHand || state.properties.rightHand ||
+						<now-input label="Weapon(s) used" required={state.properties.leftHand || state.properties.rightHand ||
 																   state.properties.leftUpperArm || state.properties.rightUpperArm ||
 							  									   state.properties.leftForearm || state.properties.rightForearm} />
 					</div>
@@ -144,7 +145,7 @@ const view = (state) => {
 								state.properties.leftCalf || state.properties.rightCalf ||
 								state.properties.leftFoot || state.properties.rightFoot)}>	
 					<div id="attack" slot="content">
-						<now-input label="Type of Force" required={state.properties.leftThigh || state.properties.rightThigh || 
+						<now-input label="Weapon(s) used" required={state.properties.leftThigh || state.properties.rightThigh || 
 																   state.properties.leftKnee || state.properties.rightKnee ||
 																   state.properties.leftShin || state.properties.rightShin ||
 																   state.properties.leftCalf || state.properties.rightCalf ||

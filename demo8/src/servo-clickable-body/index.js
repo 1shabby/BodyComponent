@@ -166,7 +166,7 @@ const view = (state, {updateState}) => {
 									<p id="body_parts">Right Forearm</p>
 								<area
 									id='arm'
-									alt="Left_Hand" title="Left Hand"
+									alt="Left_Hand"
 									coords="36,293,37,300,38,310,41,304,42,295,41,289,46,282,47,274,49,266,43,264,37,262,31,261,24,263,17,266,12,273,8,279,9,283,20,275,20,284,18,293,15,301,13,309,17,312,24,292,23,300,21,314,25,315,30,296,28,304,27,314,31,314,32,314"
 									shape="poly"
 									on-click={e => updateState({
