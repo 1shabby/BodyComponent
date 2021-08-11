@@ -197,7 +197,17 @@ const view = (state) => {
 				</now-accordion-item>
 				</now-accordion>
 				<div>
-					<now-button id="submit" label="Submit" variant="primary" size="md" icon="" tooltip-content=""/>
+					<now-button id="submit" label="Submit" variant="primary" size="md" icon="" tooltip-content=""
+					disabled={!(state.properties.leftThigh || state.properties.rightThigh || 
+						state.properties.leftKnee || state.properties.rightKnee ||
+						state.properties.leftShin || state.properties.rightShin ||
+						state.properties.leftCalf || state.properties.rightCalf ||
+						state.properties.leftFoot || state.properties.rightFoot ||
+						state.properties.leftHand || state.properties.rightHand ||
+						state.properties.leftUpperArm || state.properties.rightUpperArm ||
+						state.properties.leftForearm || state.properties.rightForearm ||
+						state.properties.torso || state.properties.neck || state.properties.head ||
+						state.properties.eyes || state.properties.ears || state.properties.nose || state.properties.mouth)}/>
 				</div>
 			</form>
 		</aside>

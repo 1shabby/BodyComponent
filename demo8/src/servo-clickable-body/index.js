@@ -481,7 +481,6 @@ const view = (state, {updateState}) => {
 							leftFoot={state.leftFoot.expanded}
 							rightFoot={state.rightFoot.expanded}/>
 					</section>
-					<p>It is tested in Chrome and Safari</p>
 				</div>
 			</div>
 	);
