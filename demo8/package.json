@@ -2,7 +2,7 @@
 	"name": "@servos/clickable-body",
 	"version": "0.0.1",
 	"private": false,
-	"description": "A clickable image component to repoty injuries to a police department.",
+	"description": "A clickable image component to report injuries to a police department.",
 	"keywords": [
 		"ServiceNow",
 		"Now Experience UI Component",

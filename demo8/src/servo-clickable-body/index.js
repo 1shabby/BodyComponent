@@ -41,7 +41,8 @@ const view = (state, {updateState}) => {
 									id='ears'
 									alt="Ears" 
 									coords="143,40,148,49,147,55,145,59,136,61,136,40" 
-									shape="poly"									on-click={e => updateState({
+									shape="poly"									
+									on-click={e => updateState({
 										path: 'ears',
 										value: {expanded: !state.ears.expanded},
 										operation: 'set'

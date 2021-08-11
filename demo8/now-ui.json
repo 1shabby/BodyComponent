@@ -1,15 +1,15 @@
 {
 	"components": {
 	    "servo-clickable-body": {
-	        "innerComponents": [],
+	        "innerComponents": ["now-button",
+								"now-textarea"],
 			"uiBuilder": {
 				"associatedTypes": ["global.core", "global.landing-page"],
-				"label": "My Component",
+				"label": "Clickable Body Component",
 				"icon": "document-outline",
-				"description": "A description of my component",
-				"category": "primitives"
+				"description": "A description of my component"
 			}
 	    }
 	},
-	"scopeName": "x_servo_servos_c_1"
+	"scopeName": "x_servo_servos_c_0"
 }
