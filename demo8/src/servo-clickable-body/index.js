@@ -111,14 +111,22 @@ const view = (state, {updateState}) => {
 									alt="Chest" 
 									coords="72,138,72,129,73,121,73,113,75,107,80,106,87,106,95,105,102,103,109,103,115,103,126,103,132,103,138,104,147,106,152,107,160,107,162,113,164,119,164,126,163,133,160,146,165,141,155,153,159,160,158,169,158,176,157,184,156,193,156,200,156,206,146,203,141,196,136,192,126,183,117,182,111,186,105,190,98,192,95,199,81,205,78,197,77,187,76,174,77,164,78,157,78,149"
 									shape="poly"
-									on-click={e => expandAccordion(e)}/>
+									on-click={e => updateState({
+										path: 'chest',
+										value: {expanded: !state.chest.expanded},
+										operation: 'set'
+										})}/>
 									<p id="body_parts">Chest</p>
 								<area
 									id='torso'
 									alt="Abdomen" 
 									coords="78,211,85,210,91,205,98,200,103,194,108,192,115,189,122,187,129,192,133,195,140,200,145,204,151,208,156,210,161,213,163,219,163,225,163,233,160,240,154,244,150,250,147,256,142,260,137,266,131,269,125,271,119,271,111,271,104,269,97,262,92,254,86,248,80,241,75,234,74,227,73,218"
 									shape="poly"
-									on-click={e => expandAccordion(e)}/>
+									on-click={e => updateState({
+										path: 'abdomen',
+										value: {expanded: !state.abdomen.expanded},
+										operation: 'set'
+										})}/>
 									<p id="body_parts">Abdomen</p>
 								<area 
 									id='arm'
@@ -295,14 +303,22 @@ const view = (state, {updateState}) => {
 									alt="Back" 
 									coords="101,83,97,90,88,94,79,101,70,104,63,107,66,124,69,140,74,149,74,158,76,174,76,184,76,195,76,206,74,219,74,231,71,244,68,255,81,254,93,254,103,254,112,256,118,263,123,255,128,255,136,255,145,255,154,255,162,255,167,255,166,246,163,236,162,227,161,218,159,207,158,198,158,185,160,171,161,159,162,149,167,136,168,123,169,113,170,106,164,102,156,99,147,95,139,89,135,84,125,84,110,83"
 									shape="poly"
-									on-click={e => expandAccordion(e)}/>
+									on-click={e => updateState({
+										path: 'back',
+										value: {expanded: !state.back.expanded},
+										operation: 'set'
+										})}/>
 									<p id="body_parts">Back</p>
 								<area
 									id='torso'
 									alt="Buttocks" 
 									coords="69,257,78,256,90,256,100,256,109,256,115,260,118,264,122,259,129,256,140,256,157,256,165,256,169,262,169,273,170,283,170,289,170,299,163,301,143,300,127,300,118,297,111,300,98,300,83,301,66,302,67,281"
 									shape="poly"
-									on-click={e => expandAccordion(e)}/>
+									on-click={e => updateState({
+										path: 'buttocks',
+										value: {expanded: !state.buttocks.expanded},
+										operation: 'set'
+										})}/>
 									<p id="body_parts">Buttocks</p>
 								<area
 									id='arm' 
@@ -463,6 +479,11 @@ const view = (state, {updateState}) => {
 							mouth={state.mouth.expanded}
 							nose={state.nose.expanded}
 	
+							chest={state.chest.expanded}
+							abdomen={state.abdomen.expanded}
+							back={state.back.expanded}
+							buttocks={state.buttocks.expanded}
+
 							leftUpperArm={state.leftUpperArm.expanded}
 							rightUpperArm={state.rightUpperArm.expanded}
 							leftForearm={state.leftForearm.expanded}
@@ -501,6 +522,11 @@ createCustomElement('x-servo-clickable-body', {
 		ears: {expanded: false},
 		nose: {expanded: false},
 		mouth: {expanded: false},
+
+		chest: {expanded:false},
+		abdomen: {expanded: false},
+		back: {expanded: false},
+		buttocks: {expanded: false},
 
 		leftUpperArm: {expanded: false},
 		rightUpperArm: {expanded: false},

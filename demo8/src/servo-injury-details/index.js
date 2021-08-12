@@ -71,12 +71,28 @@ const view = (state) => {
 				</now-accordion-item>
 				<now-accordion-item 
 					header={{"label":"Torso","weight":"bold","size":"sm","variant":"secondary"}} 
-					caption={{"label":"Click on a part of the torso to open","style":"italic","variant":"primary"}} expanded={state.properties.torso} disabled={!state.properties.torso}>
+					caption={{"label":"Click on a part of the torso to open","style":"italic","variant":"primary"}} 
+					expanded={state.properties.chest || state.properties.back ||
+							  state.properties.abdomen || state.properties.buttocks} 
+					disabled={!(state.properties.chest || state.properties.back ||
+						state.properties.abdomen || state.properties.buttocks)}>
 					<div id="attack" slot="content">
-						<now-input label="Weapon(s) used" required={state.properties.torso}/>
+						<now-input label="Weapon(s) used" required={state.properties.chest || state.properties.abdomen ||
+																	state.properties.back || state.properties.buttocks}/>
+					</div>
+					<div id="chestCheckBox" slot="content">
+						<now-checkbox id="left" label="Chest" checked={state.properties.chest} readonly={true}/>
+					</div>
+					<div id="abdomenCheckBox" slot="content">
+						<now-checkbox id="right" label="Abdomen" checked={state.properties.abdomen} readonly={true}/>
+					</div>
+					
+					<div id="buttcoksCheckBox" slot="content">
+						<now-checkbox id="right" label="Buttocks" checked={state.properties.buttocks} readonly={true}/>
 					</div>
 					<div id="Description" slot="content">
-						<now-textarea label="Short Description" required={state.properties.torso}/>
+						<now-textarea label="Short Description" required={state.properties.chest || state.properties.abdomen ||
+																		  state.properties.back || state.properties.buttocks}/>
 					</div>
 					<div id="image-file" slot="content">
 						<input id="attach_image" type="file" id="image" accept=".jpg, .jpeg, .png, .mp4"/>
@@ -206,7 +222,8 @@ const view = (state) => {
 						state.properties.leftHand || state.properties.rightHand ||
 						state.properties.leftUpperArm || state.properties.rightUpperArm ||
 						state.properties.leftForearm || state.properties.rightForearm ||
-						state.properties.torso || state.properties.neck || state.properties.head ||
+						state.properties.chest ||state.properties.abdomen || state.properties.back || 
+						state.properties.buttocks || state.properties.neck || state.properties.head ||
 						state.properties.eyes || state.properties.ears || state.properties.nose || state.properties.mouth)}/>
 				</div>
 			</form>
@@ -226,6 +243,11 @@ createCustomElement('servo-injury-details', {
 		ears: {default: false},
 		mouth: {default: false},
 		nose: {default: false},
+		//Torso Specific Sections
+		chest: {default: false},
+		abdomen: {default: false},
+		back: {default: false},
+		buttocks: {default: false},
 		//Arm Specific Sections
 		leftUpperArm: {default: false},
 		rightUpperArm: {default: false},
