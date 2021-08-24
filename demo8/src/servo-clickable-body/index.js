@@ -7,6 +7,33 @@ const imagesPath = {
 	front: "Body-Front.png",
 	back: "Body-Back.png"
 }
+////////////////////////////Helpful Comments///////////////////////////////////////
+//This function is where the sub-components for the left side of the body component
+//are added. Within the return statement of the View function, use HTML syntax to 
+//add components and configure their location via changing their properties. 
+
+//This left side of the component contains the images and image maps that allow us to
+//create clickable sections on the image, and control the on-click method that belongs
+//to the clickable area. To manipulate data, we utilze state changes to modify boolean
+//values into the negation of their current value (true -> false). If you want to easily
+//add a new section to the image you can use the tool at: https://www.image-map.net/
+//The tool allows you to have a visual indication of what the area looks like and allows
+//precise areas to easily be created by just clicking on the image. Once you create the
+//areas with the tool mentioned above, you can follow our examples below for formatting.
+//One thing to remember is that there is a front body map and a back image body map which
+//uses different clickable area pertaining to the specific side of the body.
+
+//The update state function used in the on-click method of each of the areas requires
+//a few pieces of input to work. We need to provice a path to the variable that we want
+//to change, a value that we want to modify (and what we want to do to that value), and
+//lastly we need to provide an operation that we would like to do to the value. Most times
+//we will make use of the 'set' operation as we want to set the variable to something new.
+
+//In the bottom of the file, you will notice that we included the <Servo-Injury-Details> tag
+//this is a reference to our other component that contains the right hand side with the various
+//sections containing the fields and such. In this component, we are setting the sections in
+//the other components' to the default states to our properties and thus connecting both halves
+//together as they are using the same variables.
 
 const view = (state, {updateState}) => {
 		function expandAccordion(event){
@@ -506,7 +533,15 @@ const view = (state, {updateState}) => {
 			</div>
 	);
 };
+//This is where states, and properties get added to the component. 
+//With states and properties you can send data through the component,
+//allowing you to change properties of the component via certain conditions.
 
+//In this file, we are setting the 'expanded' property of each of these sections
+//to the value that we want. Us doing this allows use to change the value of these
+//items' intial states and send that info into the the other component which operates
+//off of boolean values (true or false) and doesn't care if the variable name is the
+//same, instead only if the data is of the correct type which is the case here.
 createCustomElement('x-servo-clickable-body', {
 	renderer: {type: snabbdom},
 	view,

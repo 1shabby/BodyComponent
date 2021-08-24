@@ -9,6 +9,15 @@ import styles from './styles.scss';
 //This function is where the sub-components for the right side of the body component
 //are added. Within the return statement of the View function, use HTML syntax to 
 //add components and configure their location via changing their properties. 
+
+//In the return statement, you will notice different tag in the form of <Name></Name>
+//each of these tags build are different components of the HTML. For example <now-checkbox></now-checkbox>
+//is the tag used to add a prebuilt ServiceNow checkbox into this component. 
+//If you decide to make use of the <now-accordion></now-accordion> pre-built components, you must add a
+//<now-accordion-item></now-accordion-item> component which will be the tab that you see in our component on the right side.
+//If you want to add a component to the now-accordion-item section, you need to add the 'slot' property to the section.
+//This can by done by doing the following <Component-Name slot="content">. If you want to see what the other 
+//options for the 'slot' property are, you can visit the ServiceNow Developer site and find the APIs for the now-accordion component.
 const view = (state) => {
 	return (
 		<aside>
@@ -237,6 +246,12 @@ const view = (state) => {
 //This is where states, and properties get added to the component. 
 //With states and properties you can send data through the component,
 //allowing you to change properties of the component via certain conditions.
+
+//Below we are setting the properties of the default state for each of the selectable limbs.
+//This allows us to set the starting state of the compoenent to false for each section because
+//the default state should have no limbs selected. In the other clickable-body file we will 
+//utilize these properties connecting them to each of the clickable sections which then allows us
+//to change properties of other components when a body area is clicked.
 createCustomElement('servo-injury-details', {
 	renderer: {type: snabbdom},
 	initialState: {},
