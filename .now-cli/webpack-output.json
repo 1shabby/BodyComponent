@@ -1,0 +1,6 @@
+{
+  "warnings": [],
+  "errors": [
+    "Component tag name \"x-650959-test-project\" must start with the vendor prefix \"servo- or x-servo-\""
+  ]
+}

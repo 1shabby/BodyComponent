@@ -6,7 +6,9 @@ import '@servicenow/now-checkbox';
 import '@servicenow/now-textarea';
 import '@servicenow/now-accordion';
 import styles from './styles.scss';
-
+//This function is where the sub-components for the right side of the body component
+//are added. Within the return statement of the View function, use HTML syntax to 
+//add components and configure their location via changing their properties. 
 const view = (state) => {
 	return (
 		<aside>
@@ -30,13 +32,13 @@ const view = (state) => {
 							  state.properties.ears || state.properties.nose || state.properties.mouth}/>
 					</div>
 					<div id="eyesCheckBox" slot="content">
-						<now-checkbox id="left" label="Eyes" checked={state.properties.eyes} readonly={true}/>
+						<now-checkbox  label="Eyes" checked={state.properties.eyes} readonly={true}/>
 					</div>
 					<div id="earsCheckBox" slot="content">
 						<now-checkbox id="right" label="Ears" checked={state.properties.ears} readonly={true}/>
 					</div>
 					<div id="noseCheckBox" slot="content">
-						<now-checkbox id="left" label="Nose" checked={state.properties.nose} readonly={true}/>
+						<now-checkbox  label="Nose" checked={state.properties.nose} readonly={true}/>
 					</div>
 					<div id="mouthCheckBox" slot="content">
 						<now-checkbox id="right" label="Mouth" checked={state.properties.mouth} readonly={true}/>
@@ -81,12 +83,14 @@ const view = (state) => {
 																	state.properties.back || state.properties.buttocks}/>
 					</div>
 					<div id="chestCheckBox" slot="content">
-						<now-checkbox id="left" label="Chest" checked={state.properties.chest} readonly={true}/>
+						<now-checkbox  label="Chest" checked={state.properties.chest} readonly={true}/>
 					</div>
 					<div id="abdomenCheckBox" slot="content">
 						<now-checkbox id="right" label="Abdomen" checked={state.properties.abdomen} readonly={true}/>
 					</div>
-					
+					<div id="backCheckBox" slot="content">
+						<now-checkbox id="left" label="Abdomen" checked={state.properties.back} readonly={true}/>
+					</div>
 					<div id="buttcoksCheckBox" slot="content">
 						<now-checkbox id="right" label="Buttocks" checked={state.properties.buttocks} readonly={true}/>
 					</div>
@@ -118,19 +122,19 @@ const view = (state) => {
 					</div>
 					<p slot="content">Selected arm sections:</p>
 					<div id="checkBox" slot="content">
-						<now-checkbox id="left" label="Left Upper Arm" checked={state.properties.leftUpperArm} readonly={true}></now-checkbox>
+						<now-checkbox  label="Left Upper Arm" checked={state.properties.leftUpperArm} readonly={true}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
 						<now-checkbox id="right" label="Right Upper Arm" checked={state.properties.rightUpperArm} readonly={true}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
-						<now-checkbox id="left" label="Left Forearm" checked={state.properties.leftForearm} readonly={true}></now-checkbox>
+						<now-checkbox  label="Left Forearm" checked={state.properties.leftForearm} readonly={true}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
 						<now-checkbox id="right" label="Right Forearm" checked={state.properties.rightForearm} readonly={true}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
-						<now-checkbox id="left" label="Left Hand" checked={state.properties.leftHand} readonly={true}></now-checkbox>
+						<now-checkbox  label="Left Hand" checked={state.properties.leftHand} readonly={true}></now-checkbox>
 					</div>
 					<div id="checkBox" slot="content">
 						<now-checkbox id="right" label="Right Hand" checked={state.properties.rightHand} readonly={true}></now-checkbox>
@@ -168,31 +172,31 @@ const view = (state) => {
 																   state.properties.leftFoot || state.properties.rightFoot }/>
 					</div>
 					<div id="lthighCheckBox" slot="content">
-						<now-checkbox id="left" label="Left Thigh" checked={state.properties.leftThigh} readonly={true}></now-checkbox>
+						<now-checkbox  label="Left Thigh" checked={state.properties.leftThigh} readonly={true}></now-checkbox>
 					</div>
 					<div id="rthighCheckBox" slot="content">
 						<now-checkbox id="right" label="Right Thigh" checked={state.properties.rightThigh} readonly={true}></now-checkbox>
 					</div>
 					<div id="lkneeCheckBox" slot="content">
-						<now-checkbox id="left" label="Left Knee" checked={state.properties.leftKnee} readonly={true} ></now-checkbox>
+						<now-checkbox  label="Left Knee" checked={state.properties.leftKnee} readonly={true} ></now-checkbox>
 					</div>
 					<div id="rkneeCheckBox" slot="content">
 						<now-checkbox id="right" label="Right Knee" checked={state.properties.rightKnee} readonly={true}></now-checkbox>
 					</div>
 					<div id="lthighCheckBox" slot="content">
-						<now-checkbox id="left" label="Left Shin" checked={state.properties.leftShin} readonly={true}></now-checkbox>
+						<now-checkbox  label="Left Shin" checked={state.properties.leftShin} readonly={true}></now-checkbox>
 					</div>
 					<div id="rthighCheckBox" slot="content">
 						<now-checkbox id="right" label="Right Shin" checked={state.properties.rightShin} readonly={true}></now-checkbox>
 					</div>
 					<div id="lthighCheckBox" slot="content">
-						<now-checkbox id="left" label="Left Calf" checked={state.properties.leftCalf} readonly={true}></now-checkbox>
+						<now-checkbox  label="Left Calf" checked={state.properties.leftCalf} readonly={true}></now-checkbox>
 					</div>
 					<div id="rthighCheckBox" slot="content">
 						<now-checkbox id="right" label="Right Calf" checked={state.properties.rightCalf} readonly={true}></now-checkbox>
 					</div>
 					<div id="lfootCheckBox" slot="content">
-						<now-checkbox id="left" label="Left Foot" checked={state.properties.leftFoot} readonly={true}></now-checkbox>
+						<now-checkbox  label="Left Foot" checked={state.properties.leftFoot} readonly={true}></now-checkbox>
 					</div>
 					<div id="rfootCheckBox" slot="content">
 						<now-checkbox id="right" label="Right Foot" checked={state.properties.rightFoot} readonly={true}></now-checkbox>
@@ -230,7 +234,9 @@ const view = (state) => {
 		</aside>
 	);
 };
-
+//This is where states, and properties get added to the component. 
+//With states and properties you can send data through the component,
+//allowing you to change properties of the component via certain conditions.
 createCustomElement('servo-injury-details', {
 	renderer: {type: snabbdom},
 	initialState: {},
