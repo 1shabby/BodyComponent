@@ -1,4 +1,17 @@
 @import '@servicenow/sass-kit/host';
+//This is the SCSS file for the right hand part of our body component
+//it is responsible for doing all the formatting of different parts of that
+//component. Each of the sections of this file in the form of #<name> relate
+//back to the index.js file. For example the now-input section is reponsible
+//for formatting ALL now-input components implemented in the JavaScript file.
+
+//Below we also have sections such as '#left' which are not linked to any pre-built
+//component, but instead created by us and linked to the JavaScript file by setting
+//the 'id' property of a component to something such as 'id="left"' which would then
+//apply the formatting of #left onto the component that gets it's id set to left.
+
+//For more information pertaining to SCSS file syntax and other info,
+//You can utilze: https://sass-lang.com/documentation/syntax 
 now-input{
     margin:20px;
     margin-left: 10px;

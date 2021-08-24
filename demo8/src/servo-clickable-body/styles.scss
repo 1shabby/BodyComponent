@@ -1,4 +1,11 @@
 @import '@servicenow/sass-kit/host';
+//This is the SCSS file for the Clickable Image part of our body component
+//it is responsible for doing all the formatting of different parts of that
+//component. Each of the sections of this file in the form of #<name> relate
+//back to the index.js file. For example the #back_button section is reponsible
+//for formatting the button that allows us to switch between the front image and
+//back image. For more information pertaining to SCSS file syntax and other info,
+//You can utilze: https://sass-lang.com/documentation/syntax 
 #front_img{
     position:relative;
 }

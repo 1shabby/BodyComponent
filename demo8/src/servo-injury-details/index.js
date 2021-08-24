@@ -6,6 +6,7 @@ import '@servicenow/now-checkbox';
 import '@servicenow/now-textarea';
 import '@servicenow/now-accordion';
 import styles from './styles.scss';
+///////////////////////////////////////Helpful Comments///////////////////////////////////////////
 //This function is where the sub-components for the right side of the body component
 //are added. Within the return statement of the View function, use HTML syntax to 
 //add components and configure their location via changing their properties. 
@@ -18,6 +19,7 @@ import styles from './styles.scss';
 //If you want to add a component to the now-accordion-item section, you need to add the 'slot' property to the section.
 //This can by done by doing the following <Component-Name slot="content">. If you want to see what the other 
 //options for the 'slot' property are, you can visit the ServiceNow Developer site and find the APIs for the now-accordion component.
+
 const view = (state) => {
 	return (
 		<aside>
